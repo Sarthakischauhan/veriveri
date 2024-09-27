@@ -6,7 +6,12 @@ output [31:0] Y;
 input [31:0] A;
 input [31:0] B;
 
-nor(Y,A,B);
+  genvar i; 
+  generate
+    for ( i = 0; i<32;i=i+1) begin : nor_gate
+      nor(Y[i], A[i], B[i]);
+    end 
+  endgenerate
 
 endmodule
 
@@ -18,7 +23,12 @@ output [31:0] Y;
 input [31:0] A;
 input [31:0] B;
 
-and(Y,A,B);
+  genvar i; 
+  generate
+    for ( i = 0; i<32;i=i+1) begin : and_gate
+      and(Y[i], A[i], B[i]);
+    end 
+  endgenerate
 
 endmodule
 
@@ -29,7 +39,12 @@ output [31:0] Y;
 //input
 input [31:0] A;
 
-not(Y,A);
+  genvar i; 
+  generate
+    for ( i = 0; i<32;i=i+1) begin : not_gate
+      not(Y[i], A[i], B[i]);
+    end 
+  endgenerate
 
 endmodule
 
@@ -41,6 +56,11 @@ output [31:0] Y;
 input [31:0] A;
 input [31:0] B;
 
-or(Y,A,B);
+  genvar i; 
+  generate
+    for ( i = 0; i<32;i=i+1) begin : or_gate
+      or(Y[i], A[i], B[i]);
+    end 
+  endgenerate
 
 endmodule
