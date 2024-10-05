@@ -42,7 +42,7 @@ input [31:0] A;
   genvar i; 
   generate
     for ( i = 0; i<32;i=i+1) begin : not_gate
-      not(Y[i], A[i], B[i]);
+      not(Y[i], A[i]);
     end 
   endgenerate
 
